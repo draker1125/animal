@@ -2,7 +2,7 @@ import { Component, NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app.routes";
-import { BoardComponent } from "./core/components/board/board.component";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -11,8 +11,8 @@ import { BoardComponent } from "./core/components/board/board.component";
     ],
     imports: [
       BrowserModule,
-      AppRoutingModule,
-      BoardComponent
+      HttpClientModule,
+      AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]

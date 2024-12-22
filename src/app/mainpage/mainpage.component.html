@@ -1,0 +1,89 @@
+<head>
+  <link rel="stylesheet" href="mainpage.component.css">
+</head>
+<body>
+<div class="login-container">
+    
+   <div class="main-container">
+    <div class="profile-section">
+      <div class="profile-photo">
+        <img
+          [src]="photoUrl || 'assets/default-avatar.png'"
+          alt="Profile Photo"
+          class="photo"
+        />
+        <input type="file" (change)="onPhotoSelected($event)" />
+      </div>
+  
+      <form class="profile-form">
+        <div>
+          <label for="login">Логін:</label>
+          <input id="login" [(ngModel)]="user.login" name="login" />
+        </div>
+        <div>
+          <label for="rating">Ваш рейтинг:</label>
+          <input id="rating" [value]="user.rating" readonly />
+        </div>
+        <div>
+          <label for="location">Локація:</label>
+          <input id="location" [(ngModel)]="user.location" name="location" />
+        </div>
+        <div>
+          <label for="status">Статус:</label>
+          <select id="status" [(ngModel)]="user.status" name="status">
+            <option value="owner">Власник</option>
+            <option value="vet">Ветеринар</option>
+            <option value="caretaker">Доглядальник</option>
+          </select>
+        </div>
+        <div>
+          <label for="description">Опис:</label>
+          <textarea
+            id="description"
+            [(ngModel)]="user.description"
+            name="description"
+          ></textarea>
+        </div>
+      </form>
+  
+      <button (click)="openAddPetModal(addPetModal)" class="add-pet-button">
+        Додати профіль улюбленця
+      </button>
+    </div>
+  
+    
+  </div>
+  
+  <!-- Модальне вікно -->
+  <ng-template #addPetModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Додати профіль улюбленця</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div>
+          <label for="pet-name">Кличка:</label>
+          <input id="pet-name" [(ngModel)]="pet.name" name="petName" />
+        </div>
+        <div>
+          <label for="pet-type">Тип тварини:</label>
+          <input id="pet-type" [(ngModel)]="pet.type" name="petType" />
+        </div>
+        <div>
+          <label for="pet-gender">Стать:</label>
+          <input id="pet-gender" [(ngModel)]="pet.gender" name="petGender" />
+        </div>
+        <div>
+          <label for="pet-description">Опис:</label>
+          <textarea id="pet-description" [(ngModel)]="pet.description" name="petDescription"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="savePet()">Зберегти</button>
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Закрити</button>
+    </div>
+  </ng-template>
+</div>
+</body>

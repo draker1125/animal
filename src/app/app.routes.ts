@@ -1,16 +1,14 @@
-
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { Routes } from '@angular/router';
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { BoardComponent } from './board/board.component';
+import { MapComponent } from './map/map.component';
+import { ForumComponent } from './forum/forum.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: AppComponent },
+    {path: '', component: MainpageComponent},
+    {path: 'mainpage', component: MainpageComponent },
+    {path: 'board', component: BoardComponent},
+    {path: 'map', component: MapComponent},
+    {path: 'forum', component: ForumComponent},
+    {path: '**', redirectTo: ''}
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
-

@@ -1,0 +1,129 @@
+container-fluid {
+    background-color: #ffa500;
+    height: 100vh;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text y="50" x="10" font-size="50">🐾</text></svg>');
+    background-repeat: repeat;
+  }
+  
+  text-center button {
+    font-size: 24px;
+  }
+  header {
+    background-color: #623d1f;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* Висота шапки */
+    position: fixed; /* Фіксоване розташування */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Забезпечує, що меню завжди зверху */
+  }
+/* Загальний фон сторінки */
+body {
+  background-color: #f4a759;
+  background-image: url('../photo/background orange.png');
+  background-size: 120%;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 70px;
+}
+
+
+header h1 {
+  font-family: 'Georgia', serif;
+  font-size: 24px;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 15px;
+  font-size: 16px;
+}
+
+nav a.active {
+  background-color: #d08332;
+  border-radius: 5px;
+}
+
+/* Пошуковий рядок */
+.search-bar {
+  margin: 20px auto;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #623d1f;
+}
+
+.search-bar button {
+  background-color: #623d1f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* "Дошка оголошень" */
+.notice-board {
+  margin: 30px auto;
+  max-width: 200px;
+  padding: 120px;
+  background-color: #ffe6b3;
+  border: 2px solid #623d1f;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.notice-board::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #623d1f;
+  border-radius: 50%;
+}
+
+/* Кнопка "Додати" */
+.add-button {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  background-color: #623d1f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+  
+
+  
